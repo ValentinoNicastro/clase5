@@ -5,17 +5,27 @@ namespace Ejercicio1
 {
     internal class Program
     {
+        #region Variables
         static double recaudacion;
         static int CantIngresos;
+        #endregion
+        #region Menu
         static void ImprimirMenu()
         {
-            Console.WriteLine("Eliga una opción \n1 - Verificar Acceso \n2 - Mostrar ingresos \n3 - Mostrar recaudacion \nOtro - Terminar");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("╔════════════════════════╗\n║Eliga una opción        ║\n║1 - Verificar Acceso    ║\n║2 - Mostrar ingresos    ║\n║3 - Mostrar recaudacion ║\n║Otro - Terminar         ║\n╚════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.White;
         }
-
+        #endregion
+        #region Acceso
         static void acceso()
         {
             int ticket;
-            Console.WriteLine("Si no tene ticket o esta vencido pone 0, si esta bueno manda 1");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Si no tene ticket o esta vencido pone 0, si esta bueno manda 1"); 
+            Console.ForegroundColor = ConsoleColor.White;
+
             ticket = Convert.ToInt32(Console.ReadLine());
             if (ticket == 0)
                 generarTicket();
@@ -34,9 +44,12 @@ namespace Ejercicio1
 
             do
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Ingrese con que vehiculo ingresa");
                 Console.WriteLine("1 - A pata \n2 - Moto \n3 - Auto \n4 - La Camio \n5 - Buggy \n6 - Lanchita");
                 Console.WriteLine("En caso de ya haber ingresado los vehiculos o de no ingresar ninguno, ponga otro valor");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 tipoVehiculo = Convert.ToInt32(Console.ReadLine());
 
                 switch (tipoVehiculo)
@@ -52,7 +65,11 @@ namespace Ejercicio1
                     case 2:
                         {
                             precioVehiculo = 800;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Indique cantidad de este vehiculo");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
@@ -61,7 +78,11 @@ namespace Ejercicio1
                     case 3:
                         {
                             precioVehiculo = 1000;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Indique cantidad de este vehiculo");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
@@ -70,7 +91,11 @@ namespace Ejercicio1
                     case 4:
                         {
                             precioVehiculo = 1500;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Indique cantidad de este vehiculo");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
@@ -79,7 +104,11 @@ namespace Ejercicio1
                     case 5:
                         {
                             precioVehiculo = 5000;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Indique cantidad de este vehiculo");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
@@ -88,7 +117,11 @@ namespace Ejercicio1
                     case 6:
                         {
                             precioVehiculo = 1200;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Indique cantidad de este vehiculo");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
@@ -103,8 +136,11 @@ namespace Ejercicio1
 
             } while (tipoVehiculo >= 2 && tipoVehiculo <= 6);
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Ingrese por cuantos dias estara.");
             Console.WriteLine("De 1 a 10 dias maximo.");
+            Console.ForegroundColor = ConsoleColor.White;
+
             i = Convert.ToInt32(Console.ReadLine());
 
             switch(i)
@@ -155,19 +191,28 @@ namespace Ejercicio1
             precioFinal = precioFinal * 1.15;
             recaudacion = recaudacion + precioFinal;
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("El precio final de su ticket es: {0}", precioFinal);
+            Console.ForegroundColor = ConsoleColor.White;
         }
+        #endregion
+        #region Ingresos
         static void mostrarIngresos()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("La cantidad de ingresos es: {0}",CantIngresos);
-            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
         }
-
+        #endregion
+        #region Recaudación
         static void mostrarCaja()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("La recaudacion total es: {0}", recaudacion);
-            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
         }
+        #endregion
+        #region Main
         static void Main(string[] args)
         {
             int opcion;
@@ -200,5 +245,6 @@ namespace Ejercicio1
                 opcion = Convert.ToInt32(Console.ReadLine());
             }
         }
+        #endregion
     }
 }
