@@ -8,12 +8,14 @@ namespace Ejercicio1
         #region Variables
         static double recaudacion;
         static int CantIngresos;
+        static string[] chasis = new string[100];
+        static int cont = 0;
         #endregion
         #region Menu
         static void ImprimirMenu()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("╔════════════════════════╗\n║Eliga una opción        ║\n║1 - Verificar Acceso    ║\n║2 - Mostrar ingresos    ║\n║3 - Mostrar recaudacion ║\n║Otro - Terminar         ║\n╚════════════════════════╝");
+            Console.WriteLine("╔════════════════════════╗\n║Eliga una opción        ║\n║1 - Verificar Acceso    ║\n║2 - Mostrar ingresos    ║\n║3 - Mostrar recaudacion ║\n║4 - Chasis registrados  ║\n║Otro - Terminar         ║\n╚════════════════════════╝");
             Console.ForegroundColor = ConsoleColor.White;
         }
         #endregion
@@ -73,6 +75,11 @@ namespace Ejercicio1
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Ingrese el numero de chasis o patente");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            chasis[cont++] = Console.ReadLine();
                         }
                         break;
                     case 3:
@@ -86,6 +93,11 @@ namespace Ejercicio1
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Ingrese el numero de chasis o patente");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            chasis[cont++] = Console.ReadLine();
                         }
                         break;
                     case 4:
@@ -99,6 +111,11 @@ namespace Ejercicio1
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Ingrese el numero de chasis o patente");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            chasis[cont++] = Console.ReadLine();
                         }
                         break;
                     case 5:
@@ -112,6 +129,11 @@ namespace Ejercicio1
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Ingrese el numero de chasis o patente");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            chasis[cont++] = Console.ReadLine();
                         }
                         break;
                     case 6:
@@ -125,6 +147,11 @@ namespace Ejercicio1
                             cantVehiculo = Convert.ToInt32(Console.ReadLine());
                             precioFinal = precioFinal + (cantVehiculo * precioVehiculo);
                             CantIngresos = cantVehiculo;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Ingrese el numero de chasis o patente");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            chasis[cont++] = Console.ReadLine();
                         }
                         break;
                     default:
@@ -212,6 +239,17 @@ namespace Ejercicio1
             Console.ForegroundColor = ConsoleColor.White;
         }
         #endregion
+        #region Chasises
+        static void chasises()
+        {
+            for (int i = 0; i < cont; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(chasis[i]);
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+        #endregion
         #region Main
         static void Main(string[] args)
         {
@@ -220,25 +258,34 @@ namespace Ejercicio1
             ImprimirMenu();
             opcion = Convert.ToInt32(Console.ReadLine());
 
-            while (opcion >= 1 && opcion <= 3)
+            while (opcion >= 1 && opcion <= 4)
             {
                 switch (opcion)
                 {
                     case 1:
                         {
+                            Console.Clear();
                             acceso();
                         }
                         break;
                     case 2:
                         {
+                            Console.Clear();
                             mostrarIngresos();
                         }
                         break;
                     case 3:
                         {
+                            Console.Clear();
                             mostrarCaja();
                         }
                         break;
+                    case 4:
+                        {
+                            Console.Clear();
+                            chasises();
+
+                        }break;
                 }
                 ImprimirMenu();
                 Console.WriteLine("Ingrese la opción");
