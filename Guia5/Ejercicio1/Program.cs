@@ -242,8 +242,16 @@ namespace Ejercicio1
         #region Chasises
         static void chasises()
         {
-            for (int i = 0; i < cont; i++)
+            for (int i = 0; i < cont-1; i++)
             {
+                for (int j = i+1; j < cont; j++)
+                {
+                    if (chasis[i].CompareTo(chasis[j])>0);
+                    {
+                        string aux = chasis[i];
+                        chasis[i] = chasis[j];
+                    }
+                }
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(chasis[i]);
                 Console.ForegroundColor = ConsoleColor.White;
